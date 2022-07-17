@@ -529,6 +529,35 @@
             \subsection*{Polynome d'Hermite}
                 $e^{-z^2}z^k|_a^b =0$ Cette equation est verifier pour $a=-\infty $ et $ b=+\infty $ \\
                 Le domain $(a,b) = ]-\infty , +\infty[$
+    \chapter{Equation aux Derivees partielles}
+        \section{Defintion}
+            Relation entre variables independantes et leur derive partielles . \\
+            Pour chercher la solution des ces equation on va les transformee en equation de derive ordinair .\\
+            Pour le transform en va utilise la methode de \underline{separation des variables} puis en utilisant les \underline{condition aux limits} et les \underline{condition initial} on cherche les constants obtien de cette separation \\
+        \section{Problem de Cord vibrant}
+            On a l'equation des corde vibrant : 
+            \[ \frac{\partial^2U}{\partial x^2} = \frac{1}{v^2}\frac{\partial^2U}{\partial t^2} \]
+            Par methode de separation , la solution doit etre sous la form : $ U(x,t) = X(x)T(t) $ \\
+            On a $ \begin{cases} \frac{\partial U}{\partial x} = \frac{dX}{dx}T =TX'\implies\frac{\partial^2U^2}{\partial x^2}=TX'' \\ \frac{\partial U}{\partial t} = X.\frac{dT}{dt} = T'X \implies \frac{\partial^2 U}{\partial t^2}=T''X\end{cases} $ \\
+            Remplacent dans l'equation : $ TX'' = \frac{1}{v^2}XT'' \implies \frac{X''}{X}=\frac{1}{v^2}\frac{T''}{T}= b \implies \begin{cases}  X''-bX=0 \\ T''-bv^2T=0\end{cases}$ \\
+            $ U(x,t) $ a une limite physique (x doit avoir une maximal different que infinie) \\
+            $ \implies U(x,t) $ est une fonction convergent $\implies $ pour $X'' -bX =0 $  est convergent ,\\
+            $b$ doit etre un constant negative $b = -k^2 \implies$ $\begin{cases}  X''+k^2X=0  & (1)\\ T''+k^2v^2T=0 & (2)\end{cases}$\\
+            La solution d'equation (1) peut s'ecrire sous la form $X(x) =C_1\cos(kx+\varphi_1)$\\
+            La solution d'equation (2) peut s'ecrire sous la form $T(t) =C_2\cos(kvx+\varphi_2)$ \\
+            Alors \[ U(x,t) = C_1\cos(kx+\varphi_1)C_2\cos(kvt+\varphi_2) \] \\
+            \begin{center}
+                \boxed{ U(x,t) = C\cos(kx+\varphi_1)\cos(kvt+\varphi_2) } 
+            \end{center}
+            avec $C,\varphi_1,\varphi_2 $ seront determines par les condition initial et les condition aux limit \\
+            Les condition aux limit $U(0,t) = U(l,t) =0$ \\
+            $ \implies C\cos(k.0+\varphi_1)\cos(kvt+\varphi_2) = 0 \implies \cos(\varphi_1) =0 \implies \varphi_1 = \frac{(2n+1)\pi}{2}$\\
+            $ \implies U(x,t) = C\cos(kx+\varphi_1)\cos(kvt+\varphi_2)=-C\sin(kx)\cos(kvt+\varphi_2) $
+
+            
+            
+
+            
 
 
 
