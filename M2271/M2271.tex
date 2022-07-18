@@ -537,6 +537,11 @@
         \section{Problem de Cord vibrant}
             On a l'equation des corde vibrant : 
             \[ \frac{\partial^2U}{\partial x^2} = \frac{1}{v^2}\frac{\partial^2U}{\partial t^2} \]
+            Situation initial : \\
+            \includegraphics[width=0.5\linewidth]{pic/cordinitial.png} \\
+            Les Condition initial : $\begin{cases}\frac{\partial U(x,t)}{\partial t} = 0  \text{ pour tout } x \text{ a } t =0 \\ U(x,t) =f(x)   \text{a} t =0\end{cases}$ \\
+            Les Condition aux limit :$ \begin{cases} U(0,t) =0 \\  U(l,t) =0 \end{cases} $\\
+
             Par methode de separation , la solution doit etre sous la form : $ U(x,t) = X(x)T(t) $ \\
             On a $ \begin{cases} \frac{\partial U}{\partial x} = \frac{dX}{dx}T =TX'\implies\frac{\partial^2U^2}{\partial x^2}=TX'' \\ \frac{\partial U}{\partial t} = X.\frac{dT}{dt} = T'X \implies \frac{\partial^2 U}{\partial t^2}=T''X\end{cases} $ \\
             Remplacent dans l'equation : $ TX'' = \frac{1}{v^2}XT'' \implies \frac{X''}{X}=\frac{1}{v^2}\frac{T''}{T}= b \implies \begin{cases}  X''-bX=0 \\ T''-bv^2T=0\end{cases}$ \\
@@ -550,9 +555,103 @@
                 \boxed{ U(x,t) = C\cos(kx+\varphi_1)\cos(kvt+\varphi_2) } 
             \end{center}
             avec $C,\varphi_1,\varphi_2 $ seront determines par les condition initial et les condition aux limit \\
-            Les condition aux limit $U(0,t) = U(l,t) =0$ \\
+            La condition aux limit $U(0,t) =0$ \\
             $ \implies C\cos(k.0+\varphi_1)\cos(kvt+\varphi_2) = 0 \implies \cos(\varphi_1) =0 \implies \varphi_1 = \frac{(2n+1)\pi}{2}$\\
-            $ \implies U(x,t) = C\cos(kx+\varphi_1)\cos(kvt+\varphi_2)=-C\sin(kx)\cos(kvt+\varphi_2) $
+            $ \implies U(x,t) = C\cos(kx+\varphi_1)\cos(kvt+\varphi_2)=C\sin(kx)\cos(kvt+\varphi_2) $\\
+            La condition aux limit $ U(l,t) =0$ \\
+            $\implies C\sin(kl)\cos(kvt+\varphi_2)=0 \implies \sin(kl)=0\implies k=\frac{n\pi}{l}$\\
+            $ \implies \lambda_n = \frac{2\pi}{k_n}=\frac{2\pi}{\frac{n\pi}{l}}=\frac{2l}{n} $\\
+            \begin{center}
+                \boxed{U_n(x,t)=C_n\sin(k_nx)\cos(k_nvt +\varphi_n)}
+            \end{center}
+            Une solution particuliere $U_n(x,t)$ represente un mode normal de vibration suivant lequel tous les points de la corde vibrent avec la meme frequence , mais avec des amplitudes differents\\
+            \begin{itemize}
+                \item Mode 1 $ \implies n=1 \implies \lambda_1 = 2l $ \\ \includegraphics[width=0.5\linewidth]{pic/cordemod1.png}
+                \item Mode 2 $ \implies n=2 \implies \lambda_2 = \frac{2l}{2}=l $\\ \includegraphics[width=0.5\linewidth]{pic/cordemod2.png}
+                \item Mode 2 $ \implies n=3 \implies \lambda_3 = \frac{2l}{3}=l $\\ \includegraphics[width=0.5\linewidth]{pic/cordemod3.png}
+            \end{itemize}
+            La solution generale est une combination lineaire des solutions particulieres des modes normaux : \\
+            \[ U(x,t) = \sum^\infty_{n=1}C_n\sin(k_nx)\cos(k_nvt+\varphi_n) \]
+            avec $C_n , \varphi_n$ sont determine par les condition initial :$\begin{cases}\frac{\partial U(x,t)}{\partial t} = 0  \text{ pour tout } x \text{ a } t = 0 \\ U(x,t) =f(x)   \text{ a } t =0\end{cases}$\\
+            \begin{itemize}
+                \item $\frac{\partial U}{\partial t} =\sum^\infty_{n=1}C_n\sin(k_nx)(-vk_n)\sin(k_nvt+\varphi_n)  =0$ a $t =0$\\
+                    $\implies \sin(\varphi_n)=0 \implies \varphi_n=0$ \\
+                    $\implies U(x,t) = \sum^\infty_{n=1}C_n\sin(k_nx)\cos(k_nvt)$
+                \item $ U(x,t) = \sum^\infty_{n=1}C_n\sin(k_nx)\cos(k_nvt) =f(x) $ a $t=0$ \\
+                        $\implies C_n\sin(k_nx) =f(x) $ , C'est une serie de Fourier  \\
+                        $C_n = \frac{2}{l}\int^l_0f(x)\sin(k_nx)dx $
+            \end{itemize}
+        \pagebreak
+        \section{Problem de file mince}
+            Considerons un fil mince de longueur l , ce fil est oriente le long de l'axe de $x$ et il est parfaitement isole laterallement , le flux de chaleur se propage selement suivant $x$ . 
+            Les extremites du fil sont maintenus a la temperature  $0$ . La temperature initiale dans le fil est $f(x)$. \\
+            \[ \frac{\partial U}{\partial t} = a^2\frac{\partial^2U}{\partial x^2} \]
+            Trouver $U(x,t)$
+            \begin{itemize}
+                \item Les condition aux limits et les condition initial \\
+                    \begin{itemize}
+                        \item Condition aux limits : $\begin{cases} U(0,t)=0 \\ U(l,t) =0\end{cases}$
+                        \item Condition Initiale : $U(x,0)=f(x)$
+                    \end{itemize}
+                \item $U(x,t) = F(x)G(t)$ $\begin{cases}\frac{\partial U}{\partial t} = G'F \\  \frac{\partial U}{\partial x} = F'G\implies \frac{\partial^2U}{\partial x^2} = F''G \end{cases}$ \\
+                    Remplacent dans l'equation $FG'=a^2F''G \implies \frac{F''}{F}=\frac{G'}{a^2G} = k$ \\
+                    Comme $U(x,t)$ est une fonction borne donc $F$ est borne , et par suit $k$ doit etre negative $\implies k = -p^2$ \\
+                    Alors $\begin{cases} F''+p^2F = 0\\ G'+p^2a^2G = 0\end{cases}$
+                \item Trouver la solution de l'equation $F$ et appliquee les Condition aux limit pour trouver les constant \\
+                    $F(x) = A\cos(px)+B\sin(px)$\\
+                    $U(0,t) =0 \implies F(0) =0 \implies A\cos(p.0)+B\sin(p.0) = 0 \implies A =0 $ \\
+                    $F(x) = B\sin(px)$
+                    $U(l,t)=0 \implies F(l) =0 \implies B\sin(pl)=0 \implies p =\frac{n\pi}{l} $ \\ 
+                    $F(x)=B\sin(\frac{n\pi}{l}x)$
+                \item Trouver la solution de l'equation G \\
+                    $G'+a^2p^2G=0 \implies G'+a^2(\frac{n\pi}{l})G=0 $ \\
+                    posons $\alpha = \frac{n\pi}{l}a \implies G' + \alpha^2G =0 \implies \frac{G'}{G}=-\alpha^2 $\\
+                    $\implies \ln(G) = -\alpha^2t +cte \implies G_n =C_ne^{-\alpha_n^2t}$
+                \item Trouver la solution particuliere $U_n(x,t)$ \\
+                    $ U_n(x,t) = F_n(x)G_n(t) = B_n\sin(\frac{n\pi}{l}x)\times C_ne^{-\alpha^2_nt} $\\
+                    $ U_n(x,t) = \sum^\infty_{n=1}U_n(x,t) = \sum^\infty_{n=1}D_ne^{-\alpha_n^2t}\sin(\frac{n\pi}{l}x)$
+                \item Appliquons la derniere condition pour trouver la constante \\
+                    $ U(x,0)=f(x)\implies \sum^\infty_{n=1}D_ne^{-\alpha_n^2\times 0}\sin(\frac{n\pi}{l}x)=f(x)  $ \\
+                    $ \implies \sum^\infty_{n=1}D_n\sin(\frac{n\pi}{l}x) = f(x) \implies $Seriee de Fourier \\
+                    $D_n = \frac{2}{l}\int^l_0f(x)\sin(\frac{n\pi}{l}x)dx$
+            \end{itemize}
+        \section{Problem de propagation stationaire de la chaleur a la surface}
+            \begin{minipage}{0.49\linewidth}
+                Stationaire $ \implies \frac{\partial U}{\partial t} =0 $  \\
+                A la Surface $ \implies $ 2 dimension \\
+                l'equation de propagation devient : $\frac{\partial^2U}{\partial x^2}+\frac{\partial^2 U}{\partial y^2} =0$ \\
+            \end{minipage}
+            \begin{minipage}{0.49\linewidth}
+                La Situation initial : \\
+                \includegraphics[width=1\linewidth]{pic/chaleursurface.png}
+            \end{minipage}
+            \begin{itemize}
+                \item Condition aux limit :
+                    \begin{itemize}
+                        \item $U(0,y) = U(a,y) = 0$
+                        \item $ U(x,0) = 0 $
+                        \item $ U(x,b) = f(x) $
+                    \end{itemize}
+                \item Soit $U(x,y)=F(x)G(y)$ 
+                    $ \begin{cases} \frac{\partial^2U}{\partial x^2} = F''G \\ \frac{\partial^2U}{\partial y^2}=G''F \end{cases}$ \\
+                     Remplacent dans l'equation $ F''G+G''F=0 $\\
+                    $\frac{F''}{F}=-\frac{-G''}{G}=k$ , $F(x)$ doit etre bornee (pour $x=a$ et $ x=0$ la temperature est $0$) alors $k$ doit etre negative $\implies k = -p^2 \implies \begin{cases} F'' +p^2G =0 \\G''-p^2G=0 \end{cases}$
+                \item Appliquer les condition aux limits pour trouvers $F(x)$ et $G(y)$ \\
+                    $F'' +p^2F=0 \implies F(x) = A\cos(px)+B\sin(px)$ \\
+                    on a $F(0) = F(a)=0 \implies A\cos(0)+B\sin(0) =0 \implies A =0$ \\
+                    on a $F(a) = B\sin(pa) =0 \implies p=\frac{-n\pi}{a}$ \\
+                    Alors $F_n(x) = B_n\sin(\frac{n\pi}{a}x)$
+                    $G'' -p^22G=0 \implies G''_n -(\frac{n\pi}{a})^2G_n =0 $\\
+                    $G_n(y)=C_ne^{-\frac{n\pi}{a}y}+D_ne^{\frac{n\pi}{a}y}$ ($G(y)$ n'est pas bornee)\\
+                    on a $G_n(0) =0 \implies C_n+D_n =0 \implies D_n = -C_n$ \\
+                    Alors $G_n(y)=D_n(e^{\frac{n\pi}{a}y}-e^{\frac{-n\pi}{a}y})=2D_n\sinh(\frac{n\pi}{a}y)$
+                \item Trouver la solution particuliere $U_n(x,y)$ \\
+                    $U_n(x,y)=F_n(x)G_n(y) =B_n\sin(\frac{n\pi}{a}x)\times2D_n\sinh(\frac{n\pi}{a}y) = E_n\sin(\frac{n\pi}{a}x)\sinh(\frac{n\pi}{a}b) $\\
+                    On a $U_n(x,b) = f(x) \implies E_n\sin(\frac{n\pi}{a}x)\sinh(\frac{n\pi}{a}b)=f(x) $\\
+                    Utilisant les Serie de fourier $\implies E_n\sinh(\frac{n\pi}{a}b) = \frac{2}{a}\int^a_0f(x)\sin(\frac{n\pi}{a}x)dx $ \\
+                    $E_n=\frac{2}{a\sinh(\frac{n\pi}{a}b)}\int^a_0f(x)\sin(\frac{n\pi}{a}x)dx$
+            \end{itemize}
+
 
             
             
