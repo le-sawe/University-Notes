@@ -651,6 +651,62 @@
                     Utilisant les Serie de fourier $\implies E_n\sinh(\frac{n\pi}{a}b) = \frac{2}{a}\int^a_0f(x)\sin(\frac{n\pi}{a}x)dx $ \\
                     $E_n=\frac{2}{a\sinh(\frac{n\pi}{a}b)}\int^a_0f(x)\sin(\frac{n\pi}{a}x)dx$
             \end{itemize}
+        \section{Probleme de Membrane rectangulaire}
+            Considerons une membrane rectangulaire de dimension $a$ et $b$ , Les 4 cotes des membranes sont fixes , La position initial est $f(x,y)$ , L'equation aux deriver partielles qui satisfee le probleme est :
+            \[ \frac{\partial^2 U}{\partial x^2}+\frac{\partial^2 U}{\partial y^2}=\frac{1}{c^2}\frac{\partial^2U}{\partial t^2} \]
+            La vitess initial est $g(x,y)$ 
+            \begin{itemize}
+                \item Condition initial et condition aux limits 
+                    \begin{itemize}
+                        \item Condition aux limit $\begin{cases} U(0,y,t) = 0 \\ U(x,0,t) = 0 \\ U(a,y,t) =0 \\ U(x,b,t)=0 \end{cases}$
+                        \item Condition initial $\begin{cases} U(x,y,0) = f(x,y) \\ \frac{\partial U}{\partial t} = g(x,y) \text{ a t =0 }\end{cases}$
+                    \end{itemize}
+                \item Soit $U(x,y,t)=F(x).G(y).H(t) \begin{cases} \frac{\partial^2U}{\partial x^2}=F''.G.H \\ \frac{\partial^2 U}{\partial y^2}=F.G''.H\\ \frac{\partial^2U}{\partial t^2}=F.G.H'' \end{cases}$ \\
+                    Remplacent dans l'equation $F''.G.H + F.G''.H = \frac{1}{c^2}F.G.H'' \\
+                    \implies \frac{F''}{F}+\frac{G''}{G} = \frac{1}{c^2}\frac{H''}{H} \implies \frac{F''}{F}=\frac{-G''}{G}+\frac{1}{c^2}\frac{H''}{H}=k$ \\
+                    $U(x,y,t)$ est une fonction bornee $ \implies F(x)$ et $ G(y) $ sont bornee $\implies k $ doit etre negative $ \implies k = -\lambda^2 $ \\
+                    Alors \begin{itemize}
+                        \item \boxed{F'' + \lambda^2F =0 }(1)
+                        \item $\frac{1}{c^2}\frac{H''}{H}-\frac{G''}{G} = -\lambda^2 \implies \frac{1}{c^2}\frac{H''}{H}+\lambda^2 = \frac{G''}{G}=cte=-\gamma^2 \\
+                         \implies$ \boxed{ G''+\gamma^2G =0} (2)
+                        \item \boxed{H''+(\lambda^2+\gamma^2)C^2H=0} (3)
+                    \end{itemize}
+                \item Les solution de $F(x),G(y),H(t)$\\
+                    $F''+\lambda^2F=0 \implies F(x) = A\cos(\lambda x) + B\sin(\lambda x)$ \\
+                    On a $U(0,y,t) = 0 \implies F(0)=0 \implies A.\cos(0) + B\sin(0) =0 \implies A =0$ \\
+                    $\implies F(x)=B\sin(\lambda x)$\\
+                    On a $U(a,y,t) =0 \implies F(a) =0 \implies B\sin(\lambda a) =0 \implies \sin(\lambda a) =0 \\
+                    \implies \lambda_m = \frac{m\pi}{a}$ \\
+                    \begin{center}
+                        \boxed{F_m(x) = B_m\sin(\frac{m\pi}{a}x)}
+                    \end{center}
+                    $G''+\gamma^2G=0 \implies G(y) = C\cos(\gamma y) + D\sin(\gamma y)$ \\
+                    On a $U(x,0,t) =0 \implies G(0)=0 \implies C=0 \implies G(y) = D\sin(\gamma y)$ \\
+                    On a $U(x,b,t) =0 \implies D\sin(\gamma b) =0 \implies \gamma=\frac{n\pi}{b}$\\
+                    \begin{center}
+                        \boxed{G_n(y)=D_n\sin(\frac{n\pi}{b}y)}
+                    \end{center}
+                    $H_{mn}''+(\lambda_m^2+\gamma_n^2)C^2H_{mn}=0 \implies H'' +( (\frac{m\pi}{a})^2 + (\frac{n\pi}{b})^2 )C^2H_{mn}=0$ \\
+                    Soit $\nu_{mn}$ est la frequence angulaire d'equation   $ \nu_{mn}=\frac{\alpha_{mn}}{2\pi} $ \\
+                     avec $ \alpha_{mn}^2 = ( (\frac{m\pi}{a})^2 + (\frac{n\pi}{b})^2 )C^2 \implies H''_{mn} + \alpha^2_{mn}H_{mn}=0$\\
+                    \begin{center}
+                        \boxed{H_{mn}(t) = E_{mn}\cos(\alpha_{mn})+P_{mn}\sin(\alpha_{mn}l)}
+                    \end{center}
+                    L'equation devient $U_{mn}(x,y,t) = \left[ (A_{mn}\cos(\alpha_{mn}t)+B_{mn}\sin(\alpha_{mn}t))\sin(\frac{m\pi}{a}x) \right]$
+                \item Utilisant les condition initiale pour trouver la solution finale $U(x,y,t)$ \\
+                    $U(x,y,t) = \sum_m\sum_nU_{mn}(x,y,t)$ \\
+                    $ \implies U(x,y,t) = \sum_m\sum_n\left[ (A_{mn}\cos(\alpha_{mn}t)+B_{mn}\sin(\alpha_{mn}t))\sin(\frac{m\pi}{a}x)\sin(\frac{n\pi}{b}y) \right]$ \\
+                    On a $ U(x,y,0)=f(x,y) \implies \sum_m\sum_n\left[ (A_{mn}\cos(0)+B_{mn}\sin(0))\sin(\frac{m\pi}{a}x)\sin(\frac{n\pi}{b}y)  \right] $ \\
+                    $\implies \sum_m\sum_n\left[( A_{mn})\sin(\frac{m\pi}{a}x)\sin(\frac{n\pi}{b}y)  \right] =f(x,y)$ \\
+                    Par fourier $A_{mn}=\frac{2}{a}\frac{2}{b}\int^b_0\int^a_0f(x,y)\sin(\frac{m\pi}{a}x)\sin(\frac{n\pi}{b}y)dxdy$ \\
+                    On a $\frac{\partial U}{\partial t} = g(x,y)$ a $t =0 $ $\implies \sum_m\sum_n\alpha_{mn}B_{mn}\sin(\frac{m\pi}{a}x)\sin(\frac{n\pi}{b}y) = g(x,y)$\\
+                    Par Fourier $ \alpha_{mn}B_{mn} = \frac{2}{a}\frac{2}{b}\int^b_0\int^a_0g(x,y)\sin(\frac{m\pi}{a}x)\sin(\frac{\pi n}{b}y)dxdy $
+
+
+
+
+                    
+            \end{itemize}
 
 
             
