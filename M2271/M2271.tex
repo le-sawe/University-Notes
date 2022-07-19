@@ -701,13 +701,62 @@
                     Par fourier $A_{mn}=\frac{2}{a}\frac{2}{b}\int^b_0\int^a_0f(x,y)\sin(\frac{m\pi}{a}x)\sin(\frac{n\pi}{b}y)dxdy$ \\
                     On a $\frac{\partial U}{\partial t} = g(x,y)$ a $t =0 $ $\implies \sum_m\sum_n\alpha_{mn}B_{mn}\sin(\frac{m\pi}{a}x)\sin(\frac{n\pi}{b}y) = g(x,y)$\\
                     Par Fourier $ \alpha_{mn}B_{mn} = \frac{2}{a}\frac{2}{b}\int^b_0\int^a_0g(x,y)\sin(\frac{m\pi}{a}x)\sin(\frac{\pi n}{b}y)dxdy $
-
-
-
-
-                    
             \end{itemize}
+        \pagebreak
+        \section{Problem du plaque circulaire}
+            une plaque circulaire de rayon r = 1 a deux faces plans isolees , La moitie deson bord est maintenue a la temperature constant $ U_1 $, et lautre moitie est maintenue a $ U_2 $ \\
+            \begin{minipage}{0.7\linewidth}
+                $ \nabla^2U(r,\theta)=0 \implies \Delta U(r,\theta)=0 $ \\
+                $ \frac{\partial^2 U(r,\theta)}{\partial r^2}+\frac{1}{r}\frac{\partial U(r,\theta)}{\partial r}+\frac{1}{r^2}\frac{\partial^2U(r,\theta)}{\partial g^2} =0 $
+            \end{minipage}
+            \begin{minipage}{0.29\linewidth}
+                \includegraphics[width=\linewidth]{pic/prob5chap4.png}
+            \end{minipage}
+            \begin{itemize}
+                \item Les Condition aux limits \\
+                    $U(1,\theta)=\begin{cases} U_1 & 0<\theta<\pi \\ U_2 & \pi<\theta<2\pi \end{cases}$
+                \item  $U(r\theta) =R(r).\Theta(\theta)$\\
+                        $\begin{cases} \frac{\partial U}{\partial r}=R'\Theta \implies \frac{\partial^2U}{\partial r} = R''\Theta \\ \frac{\partial^2 U }{\partial \theta^2} = \Theta''R \end{cases}$\\
+                        Remplacent dans l'equation $ R''\Theta + \frac{1}{r}R'\Theta +\frac{1}{r^2}R\Theta'' = 0 \implies r^2\frac{R''}{R}+r\frac{R'}{R}+\frac{\Theta''}{\Theta}=0 $\\
+                        $ \implies r^2\frac{R''}{R}+r\frac{R'}{R}=-\frac{\Theta''}{\Theta}=\lambda^2 $(car $ \Theta $ est borne)\\
+                        $ \implies \begin{cases} \Theta'' + \lambda^2\Theta =0 \\ r^2R''+rR'-\lambda^2R =0 \end{cases} $
+                \item La solution de $R(r)$ et $ \Theta(\theta) $\\
+                   \begin{itemize}
+                    \item  Poson $R(r)=r^\gamma$ avec $ \gamma  $ est une constante a determiner \\
+                        $ \implies R'=\gamma r^{\gamma-1} \implies R'' = \gamma(\gamma-1)r^{\gamma-2} $\\
+                        Remplacent dans l'equation $r^2R''+rR'-\lambda^2R =0  \\ 
+                        \implies r^2\gamma(\gamma-1)r^{\gamma-1}r^{\gamma-2}+r\gamma r^{\gamma-1}-\lambda^2r^\gamma =0 \\
+                        \implies \gamma(\gamma-1)+\gamma -\lambda^2=0\implies \gamma^2-\lambda^2=0\implies \gamma =\pm\lambda$ \\
+                        $\implies R(r) = A_2r^\lambda $ ou $ R(r)=B_2r^{-\lambda} $\\
+                        La solution Bornee pour $r\to 0$ est $ R(r)=A_2r^\lambda $
+                    \item  $\Theta'' + \lambda^2\Theta =0 \implies \Theta(\theta) = A_1\cos(\lambda\theta) + B_1\sin(\lambda\theta)$
+                   \end{itemize}
+                \item La Solution de $ U(r,\theta) $ \\ 
+                    Supposons que $ U(r,\theta) $ est periodique de periode $ 2\pi $ et $U$ est Bornee \\
+                    $ U(r,\theta) = \underbrace{R(r)}_\text{Bornne}\underbrace{\Theta(\theta) }_\text{periodique}$ \\
+                    $ \implies \Theta(\theta + 2\pi) = \Theta(\theta) $\\
+                    $ \implies A_1\cos(\lambda(\theta+2\pi))+B_1\sin(\lambda(\theta+2\pi)) = A_1\cos(\lambda\theta)+B_1\sin(\lambda\theta) $ \\
+                    Pour la periodicite soit valable $ \lambda  $ doit etre un entier , soit $ \lambda = m = 0,1,2,3\ldots $
+                    Alors $ U(r,\theta) = A_2r^m(A_1\cos(m\theta) + B_1\sin(m\theta))  $
+                    \[ U_m(r,\theta) = r^m(A_m\cos(m\theta)+B_m\sin(m\theta))\]
+                \item La Solution generale de $ U(r,\theta) $ \\
+                   $ U(r,\theta) = \sum^\infty_{m=0}U_m(r,\theta) = \sum^\infty_{m=0}r^m(A_m\cos(m\theta)+B_m\sin(m\theta)) $
+                \item Trouver les constant $ A_m $ et $ B_m $
+                   On a $ U(1,\theta)  = U_1  $ pour $  0<\theta<\pi $   \\
+                   $ U(1,\theta) = \sum^\infty_{m=0}(A_m\cos(m\theta)+B_m\sin(m\theta)) $ \\
+                   Par fourier :
+                   \begin{itemize}
+                    \item $A_m = \frac{1}{\pi}\int^{2\pi}_0U(1,\theta)\times\cos(m\theta)d\theta \\$
+                          $A_m = \frac{1}{\pi}(\int^{\pi}_0U(1,\theta)\times\cos(m\theta)d\theta + \int^{2\pi}_\pi U(1,\theta)\times\cos(m\theta)d\theta )\\$
+                          $A_m = \frac{U_1}{\pi}(\frac{\sin(m\theta)}{m})^\pi_0 + \frac{U_2}{\pi}(\frac{\sin(m\theta)}{m})_\pi^{2\pi} $\\
+                          $A_m =0 $ \\
+                          Pour $ m=0 \implies A_0=\frac{1}{2\pi}\int^{2\pi}_0U(1,\theta)d\theta = \frac{1}{2\pi}(\int^\pi_0U(1,\theta)d\theta + \int^{2\pi}_\pi U(1,\theta)d\theta)\\
+                           = \frac{1}{2\pi}U_1(\pi-\theta)+\frac{U_2}{2\pi}(2\pi-\pi) = \frac{U_1+U_2}{2} $
+                    \item $B_m = \frac{1}{\pi}(\int^\pi_0 U_1\sin(m\theta)d\theta + \int_\pi^{2\pi}U_2\sin(m\theta)d\theta) = \frac{U_1}{\pi}(\frac{-\cos(m\theta)}{m})^\pi_0+\frac{U_2}{\pi}(-\frac{\cos(m\theta)}{m})^{2\pi}_\pi \\
+                           B_m = \frac{U_1}{m\pi}-\frac{U_2}{m\pi}\times\left[ \frac{U_2-U_1}{m\pi}\cos(m\pi) \right]$
+                   \end{itemize}
 
+            \end{itemize}
 
             
             
