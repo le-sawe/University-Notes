@@ -277,7 +277,7 @@
                 \begin{center}
                     avec $v_1 = \frac{c}{n_i}$ et $v_2 = \frac{c}{n_t}$
                 \end{center}
-                \underline{Coefficient de reflexin $r_\perp$}
+                \underline{Coefficient de reflexion $r_\perp$}
                 \begin{center}
                     \boxed{r_\perp = \frac{A_{r_\perp} }{A_{i_\perp}} = \frac{n_i\cos(\theta_i) -n_t\cos(\theta_t)}{n_i\cos(\theta_i) +n_t\cos(\theta_t)}}
                 \end{center}
@@ -287,7 +287,7 @@
                 \end{center}
             \subsection{polarisation parallel}
                 la method est tres proche de celle dans la polarisation perpendiculair \\
-                \underline{Coefficient de reflexin $r_\parallel$}
+                \underline{Coefficient de reflexion $r_\parallel$}
                 \begin{center}
                     \boxed{r_\parallel = \frac{A_{r_\parallel} }{A_{i_\parallel}} = \frac{n_t\cos(\theta_i) -n_i\cos(\theta_t)}{n_t\cos(\theta_i) +n_i\cos(\theta_t)}}
                 \end{center}
@@ -758,7 +758,7 @@
         \pagebreak
         \subsection{Cellue unite de la cavite optique}
         Chaque cavite optique a une cellule unite qui se repet pendant le trajet lumineux .\\
-        Pour la determiner il faut trouver le montage optique equivalent a notre cavite en remplacent les miroire en reflexin par leurs equivalent en transmission
+        Pour la determiner il faut trouver le montage optique equivalent a notre cavite en remplacent les miroire en reflexion par leurs equivalent en transmission
         \begin{itemize}
             \item Pour replacer un miroir \underline{plan} en mode transmission il suffit de deplier le trajet lumineux
                \\ \includegraphics[width = 0.6\linewidth]{pic/celluleplan.png}
@@ -1311,5 +1311,60 @@
                         Entre deux max principaux il ya (N-2) maximas secondaires d'interfernece et (N-1) zeros d 'interference
                     \end{minipage}
                 \end{center}
+    \chapter*{Important points}
+        \section*{Chapter 1}
+            \begin{itemize}
+                \item $ c = \frac{\lambda}{T} = \frac{k}{w} $\\
+                \item $ k=\frac{2\pi}{\lambda} , w =2\pi f $\\
+                \item $ A\cos(ky-wt+\frac{\pi}{2})=Ae^{i(ky+wt-\frac{\pi}{2})} $ \\
+                \item $ \vv{u} = \frac{\vv{OA}}{OA} $
+            \end{itemize}
+        \section*{Chapter 2}
+            \begin{itemize}
+            \item La polarisation est perpendiculair si $ \vv{E}  $ est perpendiculair a la plan d'incidance ( le plan incidance est le plan contenant les rayon incident , reflechie et transmit) 
+            \item $v=\frac{c}{n}$ (la vitesse de l'onde egal a la celerite de l'onde dans la vide divise par l'indice de milieu)
+            \item $ \vv{B} = \frac{1}{v} \vv{u}\wedge\vv{E} $ ($ \vv{u} $ est la vecteur de rayon lumineuse)
+            \item $ \vv{H} = \frac{1}{\mu v}\vv{u}\wedge\vv{E} $ ($ \vv{u} $ est la vecteur de rayon lumineuse)
+            \item milieux non magnetique $ \implies \mu_i = \mu_t $ 
+            \item $ \mu v = \frac{120\pi}{n} $
+            \item \begin{center}
+                \boxed{r_\perp = \frac{n_i\cos(\theta_i) -n_t\cos(\theta_t)}{n_i\cos(\theta_i) +n_t\cos(\theta_t)}}
+                \boxed{t_\perp  = \frac{2n_i\cos(\theta_i)}{n_i\cos(\theta_i) +n_t\cos(\theta_t)}}
+                \boxed{r_\parallel = \frac{n_t\cos(\theta_i) -n_i\cos(\theta_t)}{n_t\cos(\theta_i) +n_i\cos(\theta_t)}}
+                \boxed{t_\parallel =\frac{2n_i\cos(\theta_i)}{n_t\cos(\theta_i) +n_i\cos(\theta_t)}}
+                \end{center}
+            \item \begin{center}
+                \boxed{R_\perp =  r_\perp^2 }
+                \boxed{R_\parallel= r_\parallel^2 }\\
+                \boxed{T_\perp = \frac{\cos(\theta_t)}{\cos(\theta_i)} \frac{n_t}{n_i}t_\perp^2 }
+                \boxed{T_\parallel = \frac{\cos(\theta_t)}{\cos(\theta_i)} \frac{n_t}{n_i}t_\parallel^2 }\\
+                \boxed{R_\perp^\parallel+T_\perp^\parallel =1}
+                \end{center}
+        
+            \item \begin{center}
+                \begin{minipage}{0.49\linewidth}
+                    $n_i < n_t$\\
+                    \includegraphics[width = \linewidth]{pic/graphe2.png}
+                    \end{minipage}
+                    \begin{minipage}{0.49\linewidth}
+                        $n_i > n_t$\\
+                        \includegraphics[width = \linewidth]{pic/graphe4.png}
+                    \end{minipage}
+            \end{center}
+            \item angle critique $ \implies n_i\sin(\theta_i) = n_t $
+            \item angle de brewster $ \implies r_{\parallel} =0 \implies n_t\cos(\theta_b) = n_i\cos(\theta_t) $
+            \item \begin{center}
+                \boxed{\Delta\Phi_\parallel = \pi + 2\arctan(\frac{ \sqrt{\sin(\theta_i)^2 - n_{ti}^2} }{ n_{ti}^2\cos(\theta_i) } ) }
+                \boxed{\Delta\Phi_\perp = \pi + 2\arctan(\frac{ \sqrt{\sin(\theta_i)^2 - n_{ti}^2} }{\cos(\theta_i) } ) }
+                \end{center}
+            
+                  
+            \item  Fibre optique\\
+                $ \implies \text{Overture numerique }  = \sin(\theta_i) $ quand $ \beta=\beta_{\text{critique}} $\\
+                $ \implies \theta_t+\beta = \frac{\pi}{2} \implies \sin(\theta_t) =\cos(\beta) =\sqrt{1-\sin^2(\beta)}$   \\
+                avec $ n_c\sin(\beta)=n_g\sin(\frac{\pi}{2})\implies \sin(\beta) =\frac{n_g}{n_c} $\\
+                avec $ n_0\sin(\theta_i) =n_c\sin(theta_t)  \implies $ \boxed{\sin(\theta_t) = n_c\sqrt{1-\frac{n_g^2}{n_c^2}}}
+           \end{itemize}
+
             
 \end{document}
