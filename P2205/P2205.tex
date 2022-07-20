@@ -510,6 +510,35 @@
                 
                 \end{itemize}
                 \underline{Relation :} \boxed{R_\perp^\parallel+T_\perp^\parallel =1}
+        \section{Fibre Optique}
+            \begin{minipage}{0.6\linewidth}
+                Une fibre optique est un composant cylindrique permettant le transport de l'information a l'aide de la lumiere . \\
+                C'est au coeur de la fibre que se propage la lumiere , cette propagation est du au principe de reflexion totale \\
+                il suffit de satisfaire la condition $ n_c>n_g $ pour que ce phenomen soit realise
+            \end{minipage}
+            \begin{minipage}{0.39\linewidth}
+                \includegraphics[width=\linewidth]{pic/fibreoptique.png}
+                \includegraphics[width=\linewidth]{pic/fibreoptique2.png}           
+            \end{minipage}
+            \begin{center}
+                \includegraphics[width=0.7\linewidth]{pic/fibreoptique3.png}
+            \end{center}
+            Pour que la lumiere puisse se propager par reflexion totale a l'interieur du coeur de la fibre optique , il faut que :\\
+            $ \beta \geq \beta_{\text{critique}} \implies \frac{\pi}{2}-\theta_t \geq \beta_{\text{critique}} \implies -\theta_t \geq \frac{-\pi}{2} +\beta_{\text{critique}} \implies \theta_t \leq \frac{\pi}{2}-\beta_{\text{critique}}$\\
+            $ \implies \sin(\theta_t) \leq \sin(\frac{\pi}{2} - \beta_{\text{critique}}) \implies \sin(\theta_t)\leq\cos(\beta_{\text{critique}}) \\
+            \implies \sin(\theta_t)\leq\sqrt{1-\sin(\beta_{\text{critique}})^2}$ \\
+            avec $ \begin{cases}
+                n_c\sin(\beta_{\text{critique}}) = n_g\sin(\frac{\pi}{2})\implies \sin(\beta_{\text{critique}})=\frac{n_g}{n_c}\implies \sin(\theta_t)\leq\sqrt{1-(\frac{n_g}{n_c})^2}\\
+                n_0\sin(\theta_i)=n_c\sin(\theta_t)\implies \sin(\theta_t) = \frac{n_0}{n_c}\sin(\theta_i)\implies \frac{n_0}{n_c}\sin(\theta_i)\leq\sqrt{1-(\frac{n_g}{n_c})^2}
+            \end{cases}$ \\
+            $ \implies$ \boxed{\sin(\theta_i)\leq\frac{n_c}{n_0}\sqrt{1-(\frac{n_g}{n_c}^2)}}  ( Condition de guidage ) \\
+            Avec $ \begin{cases}
+                \sin(\theta_{i\text{max}}) &\text{ : Overture numerique} \\
+                \theta_{i\text{max}} & \text{ : angle d'acceptance maxiaml} 
+            \end{cases} $
+            
+
+
     \chapter{Method matricielle de Propagation }
         \subsection{Introduction}
             \begin{itemize}
