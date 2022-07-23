@@ -241,7 +241,7 @@
                     $k_i =k_r =k_1 , k_t =k_2$ \\
                     $A_i = E_{0i}e^{i\vartheta_{0i}} , A_r = E_{0r}e^{i\vartheta_{0r}} , A_t = E_{0t}e^{i\vartheta_{0t}}$
                 \end{center}
-                \pagebreak
+                
                 Soit :
                 \begin{itemize}
                     \item $\vv{E_1}$ le champ electrique resultant dans le milieu (1)
@@ -300,7 +300,7 @@
                     \boxed{1+r_\perp = t_\perp }
                     \boxed{(1-r_\parallel) = \frac{\cos(\theta_t)}{\cos(\theta_i)}t_\parallel}
                 \end{center}
-                \pagebreak
+                
         \section{Angle critique de reflexion total}
             \includegraphics[]{pic/anglecritique.png}
             \begin{itemize}
@@ -431,7 +431,7 @@
             \item  Annuler la reflexion (polarisation parallel)\\
                     (ce qui permet d avoir une image nette)
         \end{itemize}
-        \pagebreak
+        
         \section{Representatoin graphique}
             \underline{$n_i < n_t$} 
                 \begin{center}
@@ -551,7 +551,7 @@
             \begin{itemize}
                 \item  System optique center
                 \item $\theta \cong \sin(\theta) \cong \tan(\theta)$ (car $\theta $ est faible)
-                \item Grandissement transversal $G_+ = \frac{\overline{A_2B_2}}{\overline{A_1B_1}}$
+                \item Grandissement transversal $G_t              = \frac{\overline{A_2B_2}}{\overline{A_1B_1}}$
                 \item Grandissement angulair $G_a = \frac{\alpha_2}{\alpha_1}$ (par raport a laxe optique)\\
                     \begin{center}
                         \boxed{\frac{n_2}{n_1}G_tG_a =1}
@@ -656,7 +656,7 @@
                       $\tan(\alpha_1) = \alpha_1 = \frac{h_1}{R_1} \implies n_2\beta_t = n_1\beta_i +n_1\frac{h_1}{R_1} - n_2\frac{h_1}{R_1} \implies \ldots \implies $ \\
                       \boxed{n_2\beta_t = n_1\beta_i - h_1V_1} avec $V_1 = (\frac{n_2-n_1}{R_1}) = \frac{1}{f_1}$ (Vergence du dioptre)
             \end{itemize}
-            \pagebreak
+            
             ona toujour :
             \begin{itemize}
                 \item $ h_2 = Ah_1 + Bn_1\theta_1$
@@ -755,7 +755,7 @@
             \end{pmatrix}$
             qui represente la cavite 
         \end{itemize}
-        \pagebreak
+        
         \subsection{Cellue unite de la cavite optique}
         Chaque cavite optique a une cellule unite qui se repet pendant le trajet lumineux .\\
         Pour la determiner il faut trouver le montage optique equivalent a notre cavite en remplacent les miroire en reflexion par leurs equivalent en transmission
@@ -768,6 +768,34 @@
                \\ \includegraphics[width = 0.6\linewidth]{pic/celluleconvexe.png}
         \end{itemize}
     \chapter{Les phenomenes d interference}
+        \section{The heart of the Interference (walter lewin)}
+            \begin{minipage}{0.59\linewidth}
+                The path diffrence is : $ d\sin(\theta) $ \\
+                How many wavelength you can fit on that path is : $ \frac{d}{\lambda}\sin(\theta)  $\\
+                for each wavelength that i can fit on there , the phase diffrence is going to be $ 2\pi $ \\
+                \boxed{\delta = 2\pi\frac{d}{\lambda}\sin(\theta)} 
+            \end{minipage}
+            \begin{minipage}{0.4\linewidth}
+                \includegraphics[width=\linewidth]{pic/interfernce_lewin.png}
+            \end{minipage}
+            \subsection{Constrective interference}
+                $ \delta =n2\pi \implies d\sin(\theta)=n\lambda$ (the path difference is $ n \times $ the wave length) 
+            \subsection{destructive interference}
+                $ \delta = (2n-1)\pi \implies d\sin(\theta) = (\frac{2n-1}{2})\lambda $
+        \section{Thin film interference (walter lewin)}
+            \begin{minipage}{0.59\linewidth}
+                Between the two ray of ligth  {\scriptsize(the reflected on A ($I_{1}=4\%I_0 = 4$) , the transmitted in A ($ I_{TA} = 96\% I_0 $) then reflect on B ($ I_{RB} = 4\%I_{TA} $)then transmitted on A ($I_2 = \%I_{RB} = 3.7$))}\\
+                The path diffrence is $2d$ \\
+                how many wavelength in this diffrence is $ \frac{2d}{\lambda_{\text{in the film}}} $\\
+                The phase diffrence is $ \frac{4\pi d}{\lambda_{\text{in the film}}} $ \\
+                $ \lambda_{\text{in the film}} = \frac{\lambda_0}{n_{2}} \implies \frac{4\pi d n_2}{\lambda_0} $\\
+                because $ n_2 > n_1 $ there is a dephasage of $ \pi $ in the reflexion in the surface A \\
+                because $ n_3 < n_2 $ there is no dephasage in the reflexion in the surface B \\
+                \boxed{\delta = \frac{4\pi d n_2}{\lambda_0} + \pi} 
+            \end{minipage}
+            \begin{minipage}{0.4\linewidth}
+                \includegraphics[width=\linewidth]{pic/interference_walterlewin.png}
+            \end{minipage}
         \section{definition}
             \begin{itemize}
                 \item le phenomen d interfernce result de la superposition entre deux ou plusieur onde lumineuses
@@ -790,11 +818,12 @@
                 \item En interference on s'interesse a l'intensite lumineuse $I = | \langle \vv{S}\rangle |$ avec :
                     $\vv{S} =\vv{\boldsymbol{S}}=\frac{1}{\mu} \vv{\boldsymbol{E}} \wedge \vv{\boldsymbol{B}}=\frac{1}{\mu} \boldsymbol{E} B \sin \frac{\pi}{2} \vv{\boldsymbol{u}}=\frac{1}{\mu v} E^{2} \vv{\boldsymbol{u}}=\frac{\varepsilon v^{2}}{v} E^{2} \vec{u}=\varepsilon v E^{2} \vv{\boldsymbol{u}}\langle\vv{\boldsymbol{S}}\rangle=\varepsilon v\left\langle E^{2}\right\rangle \vv{\boldsymbol{u}} \implies$
                     \begin{center}
-                        \boxed{I=|\langle\vec{S}\rangle|=\varepsilon v\left\langle E^{2}\right\rangle \implies I \equiv \langle E^2 \rangle}\\
+                        $I=|\langle\vec{S}\rangle|=\varepsilon v\left\langle E^{2}\right\rangle \implies$ \boxed{ I \equiv \langle E^2 \rangle}\\
                         $ I \equiv \langle E^2 \rangle$ car l intensite depend de champ electrique et $\varepsilon v$ sont des constant \\ (l identite et les caracteristique de l intensite est dans la valeur de $E$)  
                     \end{center} 
                 \item On a $\vv{E} =\vv{E_1} + \vv{E_2} \implies \vv{E^2}=(\vv{E_1}+\vv{E_2})(\vv{E_1}+\vv{E_2})=\vv{E_1^2}+\vv{E_2^2}+2\vv{E_1}\vv{E_2}$\\
-                    et $ I \equiv \langle E^2 \rangle$ $\implies $ \boxed{I=I_1+I_2+2\underbrace{I_{12}}}($I_{12}$ est le terme d'interferance)
+                    et $ I \equiv \langle E^2 \rangle$ \\
+                     $\implies $ \boxed{I=I_1+I_2+2\underbrace{I_{12}}}($I_{12}$ est le terme d'interferance)
                 \item $I_{12} = \langle \vv{E_1}\vv{E_2} \rangle $ et $ \vv{E_1}\vv{E_2} =\vv{E_{01}}\vv{E_{02}}\cos(\vv{k_1}\vv{r_1}-wt)\cos(\vv{k_2}\vv{r_2}-wt)$\\
                     avec $\begin{cases}
                         \cos(\vv{k_1}\vv{r_1}-wt) = \cos(\vv{k_1}\vv{r_1})\cos(wt)+\sin(\vv{k_1}\vv{r_1})\sin(wt)          \\                        
@@ -804,7 +833,7 @@
                     \\ $\implies \left\langle\vv{E}_{1}  \vv{E}_{2}\right\rangle=\vv{E}_{01}  \vv{E}_{02}\left[\left\langle\cos \left(\vv{k}_{1}  \vv{r}_{1}\right) \cos \left(\vv{k}_{2}  \vv{r}_{2}\right) \cos ^{2} w t\right\rangle \right. \\ \left. +\left\langle\sin \left(\vv{k}_{1}  \vv{r}_{1}\right) \sin \left(\vv{k}_{2}  \vv{r}_{2}\right) \sin 2 w t\right\rangle+\left\langle\cos \left(\vv{k}_{1}  \vv{r}_{1}\right) \sin \left(\vv{k}_{2}  \vv{r}_{2}\right) \cos w t \sin w t\right\rangle \right. \\ \left.+\left\langle\cos \left(\vv{k}_{2}  \vv{r}_{2}\right) \sin \left(\vv{k}_{1}  \vv{r}_{1}\right) \cos w t \sin w t\right\rangle\right]$
                     \\ $\implies \langle \vv{E_1}\vv{E_2} \rangle =\vv{E_{01}}\vv{E_{02}}\left[ \frac{1}{2}\cos(\vv{k_1}\vv{r_1})\cos(\vv{k_2}\vv{r_2})+\frac{1}{2}\sin(\vv{k_1}\vv{r_1})\sin(\vv{k_2}\vv{r_2})+0 +0 \right] $\\
                     $\implies \langle \vv{E_1}\vv{E_2} \rangle = \vv{E_{01}}\vv{E_{02}}\frac{1}{2}\cos\left[ (\vv{k_1}\vv{r_1}) - (\vv{k_2}\vv{r_2}) \right]$ \\
-                    Soit $\vv{k_1}\vv{r_1} - \vv{k_2}\vv{r_2} = \Delta\phi$ Alors \boxed{I_{12} =  \langle \vv{E_1}\vv{E_2} \rangle = \vv{E_{01}}\vv{E_{02}}\frac{1}{2}\cos(\Delta\phi)}\\ 
+                    Soit \boxed{\Delta\phi = \vv{k_1}\vv{r_1} - \vv{k_2}\vv{r_2} } Alors \boxed{I_{12} =  \langle \vv{E_1}\vv{E_2} \rangle = \vv{E_{01}}\vv{E_{02}}\frac{1}{2}\cos(\Delta\phi)}\\ 
                     \underline{Note :} le moyen de cosinus et le moyen de sinus est $0$ , le moyen de sinus caree et cosinus caree est $\frac{1}{2}$
                 \item $\begin{cases}
                     I_1 = \langle \vv{E_1^2 }\rangle = \langle \vv{E_{01}}\cos(\vv{k_1}\vv{r_1} -wt)\vv{E_{01}}\cos(\vv{k_1}\vv{r_1}-wt) \rangle =\frac{1}{2}\vv{E_{01}^2}\\
@@ -813,14 +842,15 @@
                     Alors \boxed{E_{01} = \sqrt{2I_1}} et \boxed{E_{02} = \sqrt{2I_2}}
                 \item  $I_{12}=\frac{1}{2}\vv{E_{01}}\vv{E_{02}}\cos(\Delta\phi) \implies $\boxed{I_{12} = \sqrt{I_1I_2}\cos(\Delta\phi) }
                 \item  En fin : \begin{center}
-                    \boxed{I=I_1+I_2+2\sqrt{I_1I_2}\cos(\Delta\phi)} avec $\Delta\phi = \vv{k_1}\vv{r_1} - \vv{k_2}\vv{r_2} $
+                    \boxed{I=I_1+I_2+2\sqrt{I_1I_2}\cos(\Delta\phi)} avec \boxed{\Delta\phi = \vv{k_1}\vv{r_1} - \vv{k_2}\vv{r_2} }
                 \end{center}
             \end{itemize}
+            
             \subsection*{Interference constructive}
                 $I_{max} \implies \cos(\Delta\phi) = 1 = \cos(2m\pi)\implies$\boxed{\Delta\phi=2m\pi}$\implies$\boxed{I_{max}=(\sqrt{I_1}+\sqrt{I_2})^2}\\
             \subsection*{Interference destructive}
                 $I_{max} \implies \cos(\Delta\phi) = -1 = \cos((2m+1)\pi)\implies$\boxed{\Delta\phi=(2m+1)\pi}$\implies$\boxed{I_{max}=(\sqrt{I_1}-\sqrt{I_2})^2}\\
-            \subsection*{Si $E_{01} = E_{02}$}
+            \subsection*{L'interferance si $E_{01} = E_{02}$}
                 \begin{center}
                     \begin{minipage}{0.49\linewidth}
                         $ I_1=I_2=I_0 \implies 2I_0(2\cos^2(\frac{\Delta\phi}{2})) \\ \implies$ 
@@ -877,6 +907,19 @@
 
                 
             \end{itemize}
+            \subsection{Forme des franges d 'interference du dispositif d'Young}
+                \begin{itemize}
+                    \item les franges d'interference sont alors observees a l'endroit ou $\phi$ et $\delta$ sont constant 
+                    \item 
+                        \begin{minipage}{0.49\linewidth}
+                            l endroit ou $\delta=r_2-r_1=cte$ definie une famille d'hyperboloides de revolution d'axe $S_1 S_2$ , Selon la direction d'observation et la taille du champ d'observation ,
+                        les  franges pourront etre quasi-rectilignes, circularit \ldots
+                        \end{minipage}
+                        \begin{minipage}{0.49\linewidth}
+                            \includegraphics[width=\linewidth]{pic/hyperyoung1.png}
+                        \end{minipage}
+                    \item le dispositif d'young est donc interferometre a \underline{franges non localisee} , car en principe , on peut observer les franges d'nterference a n'import quel endroit du champ d'interference
+                \end{itemize}
             \subsection{Spectre d'une lampe blanche}
                 \begin{minipage}{0.49\linewidth}
                     Le spectre d'une lampe blanche est compose d'une superposition de differentes $\lambda$ , chacune donnant une serie de franges differentes \\
@@ -901,7 +944,7 @@
                 \begin{minipage}{0.4\linewidth}
                     \includegraphics[width=\linewidth]{pic/sposition.png}
                 \end{minipage} 
-                \pagebreak
+                
                 Un bon contraste necessite une source peu etendue lateralement \\
                     \begin{minipage}{0.45\linewidth}
                         Large source\\
@@ -911,20 +954,7 @@
                         small source\\
                         \includegraphics[width=\linewidth]{pic/ssize2.png}
                     \end{minipage}
-            \subsection{Forme des franges d 'interference du dispositif d'Young}
-                \begin{itemize}
-                    \item les franges d'interference sont alors observees a l'endroit ou $\phi$ et $\delta$ sont constant 
-                    \item 
-                        \begin{minipage}{0.49\linewidth}
-                            l endroit ou $\delta=r_2-r_1=cte$ definie une famille d'hyperboloides de revolution d'axe $S_1 S_2$ , Selon la direction d'observation et la taille du champ d'observation ,
-                        les  franges pourront etre quasi-rectilignes, circularit \ldots
-                        \end{minipage}
-                        \begin{minipage}{0.49\linewidth}
-                            \includegraphics[width=\linewidth]{pic/hyperyoung1.png}
-                        \end{minipage}
-                    \item le dispositif d'young est donc interferometre a \underline{franges non localisee} , car en principe , on peut observer les franges d'nterference a n'import quel endroit du champ d'interference
-                \end{itemize}
-                \pagebreak
+           
         \section{Pellicule mince}
             
             \begin{center}
@@ -1077,7 +1107,7 @@
                     \end{center}
                 \end{minipage} 
             \end{center}
-            \pagebreak
+            
             \underline{Coefficient de reflexion et de transmission} \\
             \begin{center}
                 \boxed{r=\frac{E_{r1}}{E_{i1}} = \frac{Y_0m_{11}+Y_0Y_sm_{12}-m_{21}-Y_sm_{22}}{Y_0m_{11}+Y_0Y_sm_{12}+m_{21}+Y_sm_{22}}} \vspace*{20px}
@@ -1153,7 +1183,7 @@
             et On a $r=\frac{E_{r1}}{E_{i1}} = \frac{Y_0m_{11}+Y_0Y_sm_{12}-m_{21}-Y_sm_{22}}{Y_0m_{11}+Y_0Y_sm_{12}+m_{21}+Y_sm_{22}} =\ldots  \implies$\boxed{r=\frac{n_0n_2^2-n_1^2n_s}{n_0n_2^2+n_1^2n_s}} \\
             pour $r = 0 $ , $\frac{n_0n_2^2-n_1^2n_s}{n_0n_2^2+n_1^2n_s}\implies n_0n_2^2-n_1^2n_s =0$ \\
             Donc il faut satisfe l'equation suivant \boxed{\frac{n_2^2}{n_1^2}=\frac{n_s}{n_0}} en fabricent les deux couche mince 
-            \pagebreak
+            
     \chapter{Diffraction}
         \section{Phenomene de la diffraction}
             La diffraction est la deviation d'un faisceau de lumiere pres des bords d'un obstacle ou d'une overture \\
@@ -1188,7 +1218,7 @@
                 \item On a donc une progression geometrique de raison $q=e^{i\varphi}$ et de premier terme $u_0 =1$ , la limite de cette progression est : \\
                     $[1+e^{i\varphi}+e^{i2\varphi}+\ldots+e^{i(N-1)\varphi}]=u_0\frac{1-q^N}{1-q} = \frac{e^{iN\varphi}-1}{e^{i\varphi} - 1} \implies E=E_0e^{i(kr_1-wt)}\frac{e^{iN\varphi}-1}{e^{i\varphi} - 1} $
                     $E_0e^{i(kr_1-wt)}\frac{e^{iN\varphi}-1}{e^{i\varphi} - 1} = E_0e^{i(kr_1-wt)}\frac{e^{i\frac{N\varphi}{2}}}{e^{i\frac{\varphi}{2}}}\left[ \frac{e^{iN\frac{\varphi}{2}} - e^{-iN\frac{\varphi}{2}}}{e^{i\frac{\varphi}{2}}- e^{-i\frac{\varphi}{2}}} \right] \implies $\boxed{E=E_0e^{i(kr_1+(N-1)\frac{\varphi}{2})}\left[ \frac{\sin(N\frac{\varphi}{2})}{\sin(\frac{\varphi}{2})} \right]} \\
-                \pagebreak 
+                 
                 \item Le dephasage entre la 1ere onde et la N ieme onde est : \\
                     $r_N-r_1=(N-1)a\sin(\theta)\implies r_N=r_1+(N-1)a\sin(\theta)$ \\
                     Si R est la distance entre le centre $O$ de cette distribution et le point $P$ de l'ecran $\implies$ en R on a la moitie du nombre de sources , soit $N/2$ ($R=r_{\frac{N}{2}}$)\\
@@ -1265,7 +1295,7 @@
                     \includegraphics[width=0.49\linewidth]{pic/diffractionfenterectangulair1.png}
                     \includegraphics[width=0.49\linewidth]{pic/diffractionfenterectangulair2.png}
                 \end{center}
-        \pagebreak
+        
         \section{Interfernce a deux ondes modulees par la diffraction}
             Si on a deux fente identique de largeur $b \approx \lambda$, chacune et distantes de $a$ , alors on peut observer en meme temps :
             \begin{itemize}
@@ -1290,7 +1320,7 @@
                     \end{itemize}
                 \end{minipage}
             \end{center}
-        \pagebreak
+        
         \section{Interference a N ondes modules par la difraction}
             Puisque l'interference est toujours modulee par la difraction a travers chaque fente , alors l'intensite totale a travers ce systeme de N fente devient : \\
                 \begin{center}
@@ -1311,6 +1341,8 @@
                         Entre deux max principaux il ya (N-2) maximas secondaires d'interfernece et (N-1) zeros d 'interference
                     \end{minipage}
                 \end{center}
+    \chapter{Walter lewin Interferance}
+
     \chapter*{Important points}
         \section*{Chapter 1}
             \begin{itemize}
